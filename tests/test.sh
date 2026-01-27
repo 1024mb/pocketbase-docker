@@ -179,7 +179,7 @@ if wait_for_health test-superuser; then
         # Check if superuser creation message appears in logs
         sleep 3  # Wait a moment for logs to be written
         superuser_logs=$(docker compose -f compose.test.yaml logs test-superuser 2>&1)
-        if echo "$superuser_logs" | grep -q "Successfully saved superuser"; then
+        if echo "$superuser_logs" | grep -q "Successfully created new superuser"; then
             print_status "PASS" "Automatic superuser creation is working"
         else
             print_status "FAIL" "Superuser creation message not found in logs"
