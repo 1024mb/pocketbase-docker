@@ -63,7 +63,7 @@ jobs:
     if: (needs.check.outputs.pocketbase != needs.check.outputs.package) || github.event_name == 'workflow_dispatch'
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v4
@@ -93,7 +93,7 @@ jobs:
     if: (needs.check.outputs.pocketbase != needs.check.outputs.package) || github.event_name == 'workflow_dispatch'
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v4
